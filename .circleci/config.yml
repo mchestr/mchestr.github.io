@@ -1,0 +1,47 @@
+version: 2.1
+
+executors:
+  hugo:
+    parameters:
+      version:
+        type: string
+        default: latest
+    docker:
+    - image: cibuilds/hugo:<< parameters.version >>
+    working_directory: ~/mchestr.github.io
+
+commands:
+  checkout_with_git_submodules:
+    description: "Checkout project repository with git submodules"
+    steps:
+    - checkout:
+        path: ~/mchestr.github.io
+    - run: git submodule sync && git submodule update --init
+  build_hugo:
+    description: "Build Static Site with Hugo"
+    steps:
+    - run:
+        command: hugo -v
+        working_directory: ~/mchestr.github.io
+  test_html:
+    description: "Test Generated HTML files with HTML Proofer"
+    steps:
+    - run:
+        command: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+        working_directory: ~/mchestr.github.io
+
+jobs:
+  build:
+    executor:
+      name: hugo
+      version: "0.62.2"
+    steps:
+    - checkout_with_git_submodules
+    - build_hugo
+    - test_html
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+    - build

@@ -1,4 +1,4 @@
-baseURL = "https://mchestr.github.io"
+baseURL = "/"
 languageCode = "en-us"
 title = "Mike Chester"
 theme = "awesome-identity"

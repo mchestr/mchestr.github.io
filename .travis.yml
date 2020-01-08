@@ -13,5 +13,6 @@ deploy:
   keep_history: true
   target_branch: master
   local_dir: public/
+  fqdn: chester.io
   on:
     branch: build

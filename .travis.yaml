@@ -1,0 +1,16 @@
+---
+before_install:
+  - git submodule update --init --recursive
+install:
+  - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.62.2/hugo_0.62.2_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.62.2_Linux-64bit.deb
+script:
+  - hugo
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  repo: mchestr/mchester.github.io
+  on:
+    branch: master

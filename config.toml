@@ -6,7 +6,7 @@ googleAnalytics = "UA-46220200-1"
 
 ## Profile Configurations
 [params.profile]
-  portrait = "/images/default.jpeg"
+  portrait = "/default.jpeg"
   firstname = "Mike"
   lastname = "Chester"
   title = "Senior Full Stack Developer"

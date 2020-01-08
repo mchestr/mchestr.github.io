@@ -1,7 +1,3 @@
 [submodule "themes/awesome-identity"]
 	path = themes/awesome-identity
 	url = https://github.com/posquit0/hugo-awesome-identity
-[submodule "public"]
-	path = public
-	url = git@github.com:mchestr/mchestr.github.io.git
-	branch = master

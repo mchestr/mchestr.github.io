@@ -11,6 +11,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  repo: mchestr/mchester.github.io
+  repo: mchestr/mchestr.github.io
   on:
     branch: master

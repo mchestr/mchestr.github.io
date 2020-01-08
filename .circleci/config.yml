@@ -9,6 +9,15 @@ executors:
     docker:
     - image: cibuilds/hugo:<< parameters.version >>
     working_directory: ~/mchestr.github.io
+  gh-pages:
+    parameters:
+      version:
+        type: string
+        default: latest
+    docker:
+    - image: node:<< parameters.version >>
+    working_directory: ~/mchestr.github.io
+
 
 commands:
   checkout_with_git_submodules:
@@ -23,6 +32,11 @@ commands:
     - run:
         command: hugo -v
         working_directory: ~/mchestr.github.io
+    - persist_to_workspace:
+        root: .
+        paths:
+        - public
+
   test_html:
     description: "Test Generated HTML files with HTML Proofer"
     steps:
@@ -39,9 +53,35 @@ jobs:
     - checkout_with_git_submodules
     - build_hugo
     - test_html
+  deploy:
+    executor:
+      name: gh-pages
+      version: 8.10.0
+    steps:
+    - checkout
+    - attach_workspace:
+        at: .
+    - run:
+        name: Install and configure dependencies
+        command: |
+          npm install -g --silent gh-pages@2.0.1
+          git config user.email "ci-build@chester.io"
+          git config user.name "ci-build"
+    - add_ssh_keys:
+        fingerprints:
+          - 06:83:00:68:6f:d8:9f:60:aa:71:6d:15:82:2c:4c:5f
+    - run:
+        name: Deploy docs to master branch
+        command: gh-pages --message "[skip ci] Updates" --dist public --branch testbranch
 
 workflows:
   version: 2
-  build-and-test:
+  build-and-deploy:
     jobs:
     - build
+    - deploy:
+        requires:
+        - build
+        filters:
+          branches:
+            only: build

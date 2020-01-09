@@ -72,7 +72,7 @@ jobs:
           - 06:83:00:68:6f:d8:9f:60:aa:71:6d:15:82:2c:4c:5f
     - run:
         name: Deploy docs to master branch
-        command: gh-pages --message "[skip ci] Updates" --dist public --branch testbranch
+        command: gh-pages --message "[skip ci] Updates" --dist public --branch master
 
 workflows:
   version: 2

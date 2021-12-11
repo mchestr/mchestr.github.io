@@ -4,15 +4,18 @@ title = "Mike Chester"
 theme = "awesome-identity"
 googleAnalytics = "UA-46220200-1"
 
+[params.meta]
+images = [ "/default-og.jpg" ]
+description = "Software Development Engineer"
+
 ## Profile Configurations
 [params.profile]
-  portrait = "/default.jpeg"
+  portrait = "/default.jpg"
   firstname = "Mike"
   lastname = "Chester"
-  title = "Senior Full Stack Developer"
+  title = "Software Development Engineer"
   bio = """
-  8+ years of industry experience designing, developing, and testing business critical applications
-  in a variety of programming languages.
+  8+ years of industry experience designing, developing, and testing business critical applications.
   """
 
 [params.contacts]

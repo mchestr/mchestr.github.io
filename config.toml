@@ -19,7 +19,7 @@ description = "Software Development Engineer"
   """
 
 [params.contacts]
-  email = "mikeachester@gmail.com"
+  email = "mike@chester.io"
   github = "mchestr"
   linkedin = "mchestr"
 

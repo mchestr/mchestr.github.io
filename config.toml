@@ -18,10 +18,18 @@ description = "Software Development Engineer"
   10+ years of industry experience designing, developing, and testing business critical applications.
   """
 
-[params.contacts]
-  email = "mike@chester.io"
-  github = "mchestr"
-  linkedin = "mchestr"
+[[params.contacts]]
+  url = "mailto:mike@chester.io"
+  icon = "fas fa-envelope"
+[[params.contacts]]
+  url = "https://linkedin.com/in/mchestr"
+  icon = "fab fa-linkedin"
+[[params.contacts]]
+  url = "https://github.com/mchestr"
+  icon = "fab fa-github"
+[[params.contacts]]
+  url = "https://chester.io/home-cluster"
+  icon = "fab fa-docker"
 
 [[params.actions]]
   name = "Resume"

@@ -5,7 +5,7 @@ theme = "awesome-identity"
 googleAnalytics = "UA-46220200-1"
 
 [params.meta]
-images = [ "/default-og.jpg" ]
+images = [ "/default.jpg" ]
 description = "Software Development Engineer"
 
 ## Profile Configurations

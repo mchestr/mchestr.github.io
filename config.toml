@@ -10,7 +10,7 @@ description = "Software Development Engineer"
 
 ## Profile Configurations
 [params.profile]
-  portrait = "https://mikechester.ca/default.jpg"
+  portrait = "/default.jpg"
   firstname = "Mike"
   lastname = "Chester"
   title = "Software Development Engineer"

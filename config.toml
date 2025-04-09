@@ -28,7 +28,7 @@ description = "Software Development Engineer"
   url = "https://github.com/mchestr"
   icon = "fab fa-github"
 [[params.contacts]]
-  url = "https://chester.io/home-cluster"
+  url = "https:/github.com/mchestr/home-cluster"
   icon = "fab fa-docker"
 
 [[params.actions]]

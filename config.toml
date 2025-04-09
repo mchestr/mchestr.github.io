@@ -19,7 +19,7 @@ description = "Software Development Engineer"
   """
 
 [[params.contacts]]
-  url = "mailto:mike@chester.io"
+  url = "mailto:me@mikechester.ca"
   icon = "fas fa-envelope"
 [[params.contacts]]
   url = "https://linkedin.com/in/mchestr"

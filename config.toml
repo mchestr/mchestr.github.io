@@ -33,5 +33,5 @@ description = "Software Development Engineer"
 
 [[params.actions]]
   name = "Resume"
-  url = "https://chester.io/resume.pdf"
+  url = "/resume.pdf"
 

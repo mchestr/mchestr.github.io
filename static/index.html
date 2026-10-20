@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mike Chester</title>
+<meta name="description" content="Mike Chester is a Senior Software Development Engineer at AWS in Vancouver, BC, working on AWS Cost Categories and Cost Allocation Tags.">
+<link rel="canonical" href="https://mikechester.ca/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://mikechester.ca/">
+<meta property="og:title" content="Mike Chester">
+<meta property="og:description" content="Senior Software Development Engineer at AWS, working on AWS Cost Categories and Cost Allocation Tags.">
+<meta property="og:image" content="https://mikechester.ca/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mike Chester, Senior Software Development Engineer at AWS">
+<meta property="profile:first_name" content="Mike">
+<meta property="profile:last_name" content="Chester">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mike Chester">
+<meta name="twitter:description" content="Senior Software Development Engineer at AWS, working on AWS Cost Categories and Cost Allocation Tags.">
+<meta name="twitter:image" content="https://mikechester.ca/og.png">
+<meta name="twitter:image:alt" content="Mike Chester, Senior Software Development Engineer at AWS">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<header class="masthead">
+  <img class="portrait" src="portrait.webp" width="400" height="400" alt="Illustrated portrait of Mike Chester in a cap and sunglasses, smiling">
+  <div>
+    <h1>Mike Chester</h1>
+    <p class="title">Senior Software Development Engineer at <abbr title="Amazon Web Services">AWS</abbr></p>
+    <p class="place">Vancouver, BC, Canada</p>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags, which help customers organize and allocate their AWS spend. I&rsquo;ve been building distributed backend systems since 2014, in Java, Python, Go and Rust.</p>
+    <div class="actions">
+      <a class="button primary" href="resume.pdf">Resume <span class="fmt">PDF</span></a>
+      <a class="button" href="mailto:me@mikechester.ca">me@mikechester.ca</a>
+      <ul class="links">
+        <li><a href="https://github.com/mchestr">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">Skills</h2>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd><ul><li>Java</li><li>Python</li><li>Go</li><li>Rust</li><li>TypeScript</li></ul></dd></div>
+      <div><dt>Cloud and infrastructure</dt><dd><ul><li>AWS</li><li>Kubernetes</li><li>Terraform</li><li>Flux</li><li>Docker</li></ul></dd></div>
+      <div><dt>Data and messaging</dt><dd><ul><li>PostgreSQL</li><li>Kafka</li><li>RabbitMQ</li></ul></dd></div>
+      <div><dt>Practice</dt><dd><ul><li>Distributed systems</li><li>API design</li><li>CI/CD</li><li>Mentoring</li></ul></dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <ol class="jobs">
+      <li>
+        <h3>AWS <span class="aside">(Amazon Web Services)</span></h3>
+        <ul class="roles">
+          <li class="current"><span>Senior Software Development Engineer</span> <span class="years">2026&ndash;present</span></li>
+          <li><span>Software Development Engineer</span> <span class="years">2020&ndash;2026</span></li>
+        </ul>
+        <p class="note">Cost Categories and Cost Allocation Tags, AWS Cost Management.</p>
+      </li>
+      <li>
+        <h3>IDEMIA</h3>
+        <ul class="roles">
+          <li><span>Senior Software Developer</span> <span class="years">2018&ndash;2020</span></li>
+        </ul>
+        <p class="note">eSIM orchestration platform.</p>
+      </li>
+      <li>
+        <h3>CA Technologies</h3>
+        <ul class="roles">
+          <li><span>Software Engineer</span> <span class="years">2016&ndash;2018</span></li>
+        </ul>
+        <p class="note">API Management Portal.</p>
+      </li>
+      <li>
+        <h3>Siaras</h3>
+        <ul class="roles">
+          <li><span>Software Developer</span> <span class="years">2014&ndash;2016</span></li>
+        </ul>
+        <p class="note">OpenStack hybrid cloud management.</p>
+      </li>
+    </ol>
+    <p class="more"><a href="resume.pdf">Full resume (PDF)</a></p>
+  </section>
+
+  <section aria-labelledby="project">
+    <h2 id="project">Project</h2>
+    <h3 class="project"><a href="https://github.com/mchestr/home-cluster">home-cluster</a></h3>
+    <p class="repo">github.com/mchestr/home-cluster</p>
+    <p>My home Kubernetes cluster, defined entirely as code: Talos Linux on three <span class="nowrap">Minisforum MS-01</span> nodes, with Flux (GitOps) applying changes from the repository. Renovate keeps charts and images current, and each of its pull requests is rendered with <span class="nowrap">flux-local</span> and risk-assessed in GitHub Actions before it may automerge.</p>
+    <p class="stack">Talos Linux, Flux, Renovate, Cilium, Rook, CloudNativePG, Prometheus, Terraform</p>
+  </section>
+
+  <section aria-labelledby="education">
+    <h2 id="education">Education</h2>
+    <p>B.Eng., Computer Engineering, University of Victoria, 2014</p>
+  </section>
+</main>
+
+<footer>
+  <p>Mike Chester</p>
+  <ul class="links">
+    <li><a href="mailto:me@mikechester.ca">me@mikechester.ca</a></li>
+    <li><a href="https://github.com/mchestr">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>

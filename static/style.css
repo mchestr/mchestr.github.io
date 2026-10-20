@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light dark;
+  --bg: #faf9f7;
+  --text: #1b1916;
+  --muted: #6b645b;
+  --rule: #e4e0da;
+  --border: #8f877c;        /* outlined button edge, at least 3:1 on --bg */
+  --accent: #a14d17;
+  --accent-hover: #8a4113;
+  --on-accent: #ffffff;
+  --ring: transparent;      /* edge around the portrait */
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, "Noto Serif", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141210;
+    --text: #ece7e0;
+    --muted: #a19a90;
+    --rule: #2e2a26;
+    --border: #756d63;
+    --accent: #e38d55;
+    --accent-hover: #eba06f;
+    --on-accent: #141210;
+    --ring: #3a352f;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.6 var(--sans);
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 41rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+p, dd { text-wrap: pretty; }
+h1, .title { text-wrap: balance; }
+.nowrap { white-space: nowrap; }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+a:hover { text-decoration-color: currentColor; }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+a:not(.button):focus-visible { border-radius: 2px; }
+
+abbr[title] { text-decoration: none; }
+
+/* Masthead */
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.portrait {
+  flex: none;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 0 1px var(--ring);
+}
+/* 500 only changes fallbacks that have a medium weight (e.g. Noto Serif); Charter stays regular */
+h1 {
+  font: 500 2.75rem/1.05 var(--serif);
+  letter-spacing: -0.015em;
+}
+.title {
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+.place {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Intro and actions */
+.intro { margin-top: 3rem; }
+.lede {
+  font: 400 1.3125rem/1.55 var(--serif);
+  max-width: 34em;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+}
+.actions .links { margin-left: 0.75rem; }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.375rem;
+}
+.links a { display: inline-block; padding-block: 0.6rem; }
+
+/* 1.5rem line + padding + border = 44px tap target */
+.button {
+  display: inline-block;
+  padding: 0.5625rem 1.1rem;
+  line-height: 1.5rem;
+  border: 1px solid var(--border);   /* also keeps the button visible in forced-colors mode */
+  border-radius: 0.375rem;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+.button:hover { border-color: var(--accent); color: var(--accent); }
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+.button.primary:hover { border-color: var(--accent-hover); background: var(--accent-hover); color: var(--on-accent); }
+.fmt { font-weight: 400; font-size: 0.8125rem; letter-spacing: 0.04em; margin-left: 0.2em; }
+
+/* Sections */
+section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+h2 {
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.aside { color: var(--muted); font-weight: 400; }
+
+/* Skills */
+.skills > div {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  align-items: baseline;
+  gap: 0 1.5rem;
+}
+.skills > div + div { margin-top: 0.6rem; }
+.skills dt { color: var(--muted); font-size: 0.9375rem; }
+.skills li { display: inline; }
+.skills li:not(:last-child)::after { content: ", "; }
+
+/* Experience */
+.jobs > li + li { margin-top: 1.75rem; }
+.roles li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 1rem;
+}
+.years {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+/* Current role: years in body colour with a small accent dot */
+.current .years { color: var(--text); font-weight: 500; }
+.current .years::before {
+  content: "";
+  display: inline-block;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: 0.1em;
+}
+.note {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+.more { margin-top: 1.25rem; font-size: 0.9375rem; }
+.more a { display: inline-block; padding-block: 0.6rem; }
+
+/* Project */
+.project { font-size: 1.125rem; }
+.repo { color: var(--muted); font-size: 0.8125rem; margin-bottom: 0.5rem; }
+.stack {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1.5rem;
+  margin-top: 4rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color 0.15s, background-color 0.15s, border-color 0.15s, text-decoration-color 0.15s; }
+}
+
+@media (max-width: 34rem) {
+  .page { padding: 3rem 1.25rem 2rem; }
+  .masthead { gap: 1.125rem; }
+  .portrait { width: 6rem; height: 6rem; }
+  h1 { font-size: 2.125rem; }
+  .title { margin-top: 0.4rem; font-size: 1rem; line-height: 1.4; }
+  .intro { margin-top: 2.5rem; }
+  .lede { font-size: 1.1875rem; }
+  .actions .links { margin-left: 0; }
+  section { margin-top: 2.75rem; padding-top: 2rem; }
+  .roles li { display: block; }
+  .roles li + li { margin-top: 0.4rem; }
+  .years { display: block; font-size: 0.875rem; line-height: 1.5; }
+  .note { margin-top: 0.4rem; }
+  .skills > div { grid-template-columns: 1fr; }
+  .skills > div + div { margin-top: 0.9rem; }
+  footer { margin-top: 3rem; }
+}
+
+@media (max-width: 22rem) {
+  .masthead { flex-direction: column; align-items: flex-start; }
+}
+
+@media print {
+  :root { --bg: #fff; --text: #000; --muted: #444; --accent: #000; }
+  .page { padding: 0; max-width: none; }
+  .button, .button.primary { padding: 0; border: 0; background: none; color: #000; }
+}

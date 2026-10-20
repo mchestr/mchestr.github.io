@@ -6,9 +6,12 @@
 <title>Mike Chester</title>
 <meta name="description" content="Mike Chester is a Senior Software Development Engineer at AWS in Vancouver, BC, working on AWS Cost Categories and Cost Allocation Tags.">
 <link rel="canonical" href="https://mikechester.ca/">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#141210">
+<script>
+  // Dark is the default; apply a saved choice of light before the first paint.
+  try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}
+</script>
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://mikechester.ca/">
 <meta property="og:title" content="Mike Chester">
@@ -35,6 +38,11 @@
 </head>
 <body>
 <div class="page">
+<button class="theme-toggle" type="button" aria-label="Switch to light theme" hidden>
+  <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
 <header class="masthead">
   <img class="portrait" src="portrait.webp" width="400" height="400" alt="Illustrated portrait of Mike Chester in a cap and sunglasses, smiling">
   <div>
@@ -46,26 +54,15 @@
 
 <main>
   <div class="intro">
-    <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags, which help customers organize and allocate their AWS spend. I&rsquo;ve been building distributed backend systems since 2014, in Java, Python, Go and Rust.</p>
+    <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags, which help customers organize and allocate their AWS spend. I&rsquo;ve been building distributed backend systems since 2014.</p>
     <div class="actions">
-      <a class="button primary" href="resume.pdf">Resume <span class="fmt">PDF</span></a>
-      <a class="button" href="mailto:me@mikechester.ca">me@mikechester.ca</a>
+      <a class="button" href="mailto:mike@mikechester.ca">mike@mikechester.ca</a>
       <ul class="links">
         <li><a href="https://github.com/mchestr">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
       </ul>
     </div>
   </div>
-
-  <section aria-labelledby="skills">
-    <h2 id="skills">Skills</h2>
-    <dl class="skills">
-      <div><dt>Languages</dt><dd><ul><li>Java</li><li>Python</li><li>Go</li><li>Rust</li><li>TypeScript</li></ul></dd></div>
-      <div><dt>Cloud and infrastructure</dt><dd><ul><li>AWS</li><li>Kubernetes</li><li>Terraform</li><li>Flux</li><li>Docker</li></ul></dd></div>
-      <div><dt>Data and messaging</dt><dd><ul><li>PostgreSQL</li><li>Kafka</li><li>RabbitMQ</li></ul></dd></div>
-      <div><dt>Practice</dt><dd><ul><li>Distributed systems</li><li>API design</li><li>CI/CD</li><li>Mentoring</li></ul></dd></div>
-    </dl>
-  </section>
 
   <section aria-labelledby="experience">
     <h2 id="experience">Experience</h2>
@@ -100,7 +97,6 @@
         <p class="note">OpenStack hybrid cloud management.</p>
       </li>
     </ol>
-    <p class="more"><a href="resume.pdf">Full resume (PDF)</a></p>
   </section>
 
   <section aria-labelledby="project">
@@ -120,11 +116,35 @@
 <footer>
   <p>Mike Chester</p>
   <ul class="links">
-    <li><a href="mailto:me@mikechester.ca">me@mikechester.ca</a></li>
+    <li><a href="mailto:mike@mikechester.ca">mike@mikechester.ca</a></li>
     <li><a href="https://github.com/mchestr">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
   </ul>
 </footer>
 </div>
+
+<script>
+  // Theme toggle: shown only when JavaScript runs; without it the page stays dark.
+  (() => {
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const apply = theme => {
+      if (theme === "light") root.dataset.theme = "light";
+      else delete root.dataset.theme;
+      const label = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+      toggle.setAttribute("aria-label", label);
+      toggle.title = label;
+      themeColor.content = theme === "light" ? "#faf9f7" : "#141210";
+    };
+    apply(root.dataset.theme === "light" ? "light" : "dark");
+    toggle.hidden = false;
+    toggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      apply(next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
 </body>
 </html>

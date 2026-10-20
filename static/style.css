@@ -40,16 +40,15 @@ body {
 
 .page {
   position: relative;
-  max-width: 41rem;
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 5rem 1.5rem 3rem;
+  padding: 5rem 1.5rem 5rem;
 }
 
 h1, h2, h3, p, ul, ol { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 p { text-wrap: pretty; }
 h1, .title { text-wrap: balance; }
-.nowrap { white-space: nowrap; }
 
 a {
   color: var(--accent);
@@ -118,26 +117,20 @@ h1 {
 }
 
 /* Intro and actions */
-.intro { margin-top: 3rem; }
 .lede {
+  margin-top: 3rem;
   font: 400 1.3125rem/1.55 var(--serif);
-  max-width: 34em;
 }
 .actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
+  gap: 0 1.375rem;
+  margin-top: 1.75rem;
   font-size: 0.9375rem;
 }
-.actions .links { margin-left: 0.75rem; }
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1.375rem;
-}
-.links a { display: inline-block; padding-block: 0.6rem; }
+.actions li:first-child { margin-right: 0.25rem; }
+.actions a:not(.button) { display: inline-block; padding-block: 0.6rem; }
 
 /* 1.5rem line + padding + border = 44px tap target */
 .button {
@@ -168,14 +161,19 @@ h2 {
   text-transform: uppercase;
 }
 h3 {
-  font-size: 1.0625rem;
+  font-size: inherit;
   font-weight: 600;
 }
-.aside { color: var(--muted); font-weight: 400; }
 
-/* Experience */
-.jobs > li + li { margin-top: 1.75rem; }
-.roles li {
+/* Experience and project: name on the left, details on the right */
+.rows > li, .row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 1.5rem;
+  align-items: baseline;
+}
+.rows > li + li { margin-top: 0.75rem; }
+.rows ul li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -199,55 +197,26 @@ h3 {
   background: var(--accent);
   vertical-align: 0.1em;
 }
-.note {
-  margin-top: 0.15rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-/* Project */
-.project { font-size: 1.125rem; }
-.repo { color: var(--muted); font-size: 0.8125rem; margin-bottom: 0.5rem; }
-.stack {
-  margin-top: 0.6rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-/* Footer */
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 1.5rem;
-  margin-top: 4rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 0.875rem;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   a, .theme-toggle { transition: color 0.15s, background-color 0.15s, border-color 0.15s, text-decoration-color 0.15s; }
 }
 
-@media (max-width: 34rem) {
-  .page { padding: 4rem 1.25rem 2rem; }
+@media (max-width: 42rem) {
+  .page { padding: 4rem 1.25rem 3rem; }
   .theme-toggle { top: 0.625rem; right: 0.75rem; }
   .masthead { gap: 1.125rem; }
   .portrait { width: 6rem; height: 6rem; }
   h1 { font-size: 2.125rem; }
   .title { margin-top: 0.4rem; font-size: 1rem; line-height: 1.4; }
-  .intro { margin-top: 2.5rem; }
-  .lede { font-size: 1.1875rem; }
-  .actions .links { margin-left: 0; }
-  section { margin-top: 2.75rem; padding-top: 2rem; }
-  .roles li { display: block; }
-  .roles li + li { margin-top: 0.4rem; }
+  .lede { margin-top: 2.5rem; font-size: 1.1875rem; }
+  .actions li:first-child { flex-basis: 100%; margin: 0 0 0.25rem; }   /* email button on its own row */
+  section { margin-top: 2.75rem; }
+  .rows > li, .row { display: block; }
+  .rows > li + li { margin-top: 1.25rem; }
+  .rows ul li { display: block; }
+  .rows ul li + li { margin-top: 0.4rem; }
   .years { display: block; font-size: 0.875rem; line-height: 1.5; }
-  .note { margin-top: 0.4rem; }
-  footer { margin-top: 3rem; }
 }
 
 @media (max-width: 22rem) {

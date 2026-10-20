@@ -48,79 +48,51 @@
   <div>
     <h1>Mike Chester</h1>
     <p class="title">Senior Software Development Engineer at <abbr title="Amazon Web Services">AWS</abbr></p>
-    <p class="place">Vancouver, BC, Canada</p>
+    <p class="place">Vancouver, BC</p>
   </div>
 </header>
 
 <main>
-  <div class="intro">
-    <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags, which help customers organize and allocate their AWS spend. I&rsquo;ve been building distributed backend systems since 2014.</p>
-    <div class="actions">
-      <a class="button" href="mailto:mike@mikechester.ca">mike@mikechester.ca</a>
-      <ul class="links">
-        <li><a href="https://github.com/mchestr">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
+  <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags.</p>
+  <ul class="actions">
+    <li><a class="button" href="mailto:mike@mikechester.ca">mike@mikechester.ca</a></li>
+    <li><a href="https://github.com/mchestr">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
+  </ul>
 
   <section aria-labelledby="experience">
     <h2 id="experience">Experience</h2>
-    <ol class="jobs">
+    <ol class="rows">
       <li>
-        <h3>AWS <span class="aside">(Amazon Web Services)</span></h3>
-        <ul class="roles">
+        <h3>AWS</h3>
+        <ul>
           <li class="current"><span>Senior Software Development Engineer</span> <span class="years">2026&ndash;present</span></li>
           <li><span>Software Development Engineer</span> <span class="years">2020&ndash;2026</span></li>
         </ul>
-        <p class="note">Cost Categories and Cost Allocation Tags, AWS Cost Management.</p>
       </li>
       <li>
         <h3>IDEMIA</h3>
-        <ul class="roles">
-          <li><span>Senior Software Developer</span> <span class="years">2018&ndash;2020</span></li>
-        </ul>
-        <p class="note">eSIM orchestration platform.</p>
+        <ul><li><span>Senior Software Developer</span> <span class="years">2018&ndash;2020</span></li></ul>
       </li>
       <li>
         <h3>CA Technologies</h3>
-        <ul class="roles">
-          <li><span>Software Engineer</span> <span class="years">2016&ndash;2018</span></li>
-        </ul>
-        <p class="note">API Management Portal.</p>
+        <ul><li><span>Software Engineer</span> <span class="years">2016&ndash;2018</span></li></ul>
       </li>
       <li>
         <h3>Siaras</h3>
-        <ul class="roles">
-          <li><span>Software Developer</span> <span class="years">2014&ndash;2016</span></li>
-        </ul>
-        <p class="note">OpenStack hybrid cloud management.</p>
+        <ul><li><span>Software Developer</span> <span class="years">2014&ndash;2016</span></li></ul>
       </li>
     </ol>
   </section>
 
   <section aria-labelledby="project">
     <h2 id="project">Project</h2>
-    <h3 class="project"><a href="https://github.com/mchestr/home-cluster">home-cluster</a></h3>
-    <p class="repo">github.com/mchestr/home-cluster</p>
-    <p>My home Kubernetes cluster, defined entirely as code: Talos Linux on three <span class="nowrap">Minisforum MS-01</span> nodes, with Flux (GitOps) applying changes from the repository. Renovate keeps charts and images current, and each of its pull requests is rendered with <span class="nowrap">flux-local</span> and risk-assessed in GitHub Actions before it may automerge.</p>
-    <p class="stack">Talos Linux, Flux, Renovate, Cilium, Rook, CloudNativePG, Prometheus, Terraform</p>
-  </section>
-
-  <section aria-labelledby="education">
-    <h2 id="education">Education</h2>
-    <p>B.Eng., Computer Engineering, University of Victoria, 2014</p>
+    <div class="row">
+      <h3><a href="https://github.com/mchestr/home-cluster">home-cluster</a></h3>
+      <p>My home Kubernetes cluster, run as code with Talos Linux, Flux and Renovate.</p>
+    </div>
   </section>
 </main>
-
-<footer>
-  <p>Mike Chester</p>
-  <ul class="links">
-    <li><a href="mailto:mike@mikechester.ca">mike@mikechester.ca</a></li>
-    <li><a href="https://github.com/mchestr">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
-  </ul>
-</footer>
 </div>
 
 <script>

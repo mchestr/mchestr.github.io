@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mike Chester</title>
+<meta name="description" content="Mike Chester is a Senior Software Development Engineer at AWS in Vancouver, BC, working on AWS Cost Categories and Cost Allocation Tags.">
+<link rel="canonical" href="https://mikechester.ca/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#141210">
+<script>
+  // Dark is the default; apply a saved choice of light before the first paint.
+  try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}
+</script>
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://mikechester.ca/">
+<meta property="og:title" content="Mike Chester">
+<meta property="og:description" content="Senior Software Development Engineer at AWS, working on AWS Cost Categories and Cost Allocation Tags.">
+<meta property="og:image" content="https://mikechester.ca/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mike Chester, Senior Software Development Engineer at AWS">
+<meta property="profile:first_name" content="Mike">
+<meta property="profile:last_name" content="Chester">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mike Chester">
+<meta name="twitter:description" content="Senior Software Development Engineer at AWS, working on AWS Cost Categories and Cost Allocation Tags.">
+<meta name="twitter:image" content="https://mikechester.ca/og.png">
+<meta name="twitter:image:alt" content="Mike Chester, Senior Software Development Engineer at AWS">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<button class="theme-toggle" type="button" aria-label="Switch to light theme" hidden>
+  <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
+<header class="masthead">
+  <img class="portrait" src="portrait.webp" width="400" height="400" alt="Illustrated portrait of Mike Chester in a cap and sunglasses, smiling">
+  <div>
+    <h1>Mike Chester</h1>
+    <p class="title">Senior Software Development Engineer at <abbr title="Amazon Web Services">AWS</abbr></p>
+    <p class="place">Vancouver, BC</p>
+  </div>
+</header>
+
+<main>
+  <p class="lede">I work on AWS Cost Categories and Cost Allocation Tags.</p>
+  <ul class="actions">
+    <li><a class="button" href="mailto:mike@mikechester.ca">mike@mikechester.ca</a></li>
+    <li><a href="https://github.com/mchestr">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/mchestr">LinkedIn</a></li>
+  </ul>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <ol class="rows">
+      <li>
+        <h3>AWS</h3>
+        <ul>
+          <li class="current"><span>Senior Software Development Engineer</span> <span class="years">2026&ndash;present</span></li>
+          <li><span>Software Development Engineer</span> <span class="years">2020&ndash;2026</span></li>
+        </ul>
+      </li>
+      <li>
+        <h3>IDEMIA</h3>
+        <ul><li><span>Senior Software Developer</span> <span class="years">2018&ndash;2020</span></li></ul>
+      </li>
+      <li>
+        <h3>CA Technologies</h3>
+        <ul><li><span>Software Engineer</span> <span class="years">2016&ndash;2018</span></li></ul>
+      </li>
+      <li>
+        <h3>Siaras</h3>
+        <ul><li><span>Software Developer</span> <span class="years">2014&ndash;2016</span></li></ul>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="project">
+    <h2 id="project">Project</h2>
+    <div class="row">
+      <h3><a href="https://github.com/mchestr/home-cluster">home-cluster</a></h3>
+      <p>My home Kubernetes cluster, run as code with Talos Linux, Flux and Renovate.</p>
+    </div>
+  </section>
+</main>
+</div>
+
+<script>
+  // Theme toggle: shown only when JavaScript runs; without it the page stays dark.
+  (() => {
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const apply = theme => {
+      if (theme === "light") root.dataset.theme = "light";
+      else delete root.dataset.theme;
+      const label = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+      toggle.setAttribute("aria-label", label);
+      toggle.title = label;
+      themeColor.content = theme === "light" ? "#faf9f7" : "#141210";
+    };
+    apply(root.dataset.theme === "light" ? "light" : "dark");
+    toggle.hidden = false;
+    toggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      apply(next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

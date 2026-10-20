@@ -143,6 +143,7 @@ h1 {
   color: var(--on-accent);
   font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;   /* lets the address wrap when a phone's text size is enlarged */
 }
 .button:hover { border-color: var(--accent-hover); background: var(--accent-hover); }
 

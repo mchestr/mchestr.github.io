@@ -82,7 +82,9 @@ abbr[title] { text-decoration: none; }
   color: var(--muted);
   cursor: pointer;
 }
-.theme-toggle:hover { border-color: var(--rule); color: var(--text); }
+@media (hover: hover) {   /* a tap on a touch screen would leave the hover ring on */
+  .theme-toggle:hover { border-color: var(--rule); color: var(--text); }
+}
 .theme-toggle[hidden] { display: none; }
 .icon-moon { display: none; }
 [data-theme="light"] .icon-sun { display: none; }
